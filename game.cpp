@@ -3,7 +3,8 @@ using namespace std;
 
 int dx[] = {0, 1, 0, -1, -1, 1, -1, 1};
 int dy[] = {-1, 0, 1, 0, -1, 1, 1, -1};
-int n;
+const int FOUND_WORDS_SIZE_CAP = 50;
+const int n = 4;
 
 
 vector<vector<char>> grid;
@@ -79,7 +80,7 @@ void dfs(int i, int j, string word) {
     word += temp;
 
     // custom check
-    if(foundWords.size() >= 50) return;
+    if(foundWords.size() >= FOUND_WORDS_SIZE_CAP) return;
 
     if (searchFun(word, 0, root)) {
         foundWords.insert(word);
@@ -99,7 +100,6 @@ void dfs(int i, int j, string word) {
 int main() {
     preProcess();
     cout << "Enter 4 X 4 character grid:" << endl;
-    n = 4;
     grid.resize(n, vector<char>(n));
 
     for(int i = 0; i < n; i++) {
