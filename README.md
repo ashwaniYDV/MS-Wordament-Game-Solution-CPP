@@ -5,7 +5,7 @@ Preprocessing is done by generating a TRIE data structure by reading corncob_low
 Then a normal DFS is done on the input 2D grid and words are compared with our generated TRIE to check meaningful words which can be generated using the input grid.
 
 ### Compilation of Source Code
-Compile the source code using the following command:
+First of all clone this repository and then compile the source code using the following command:
 ```
 g++ game.cpp -o game
 ```
