@@ -50,7 +50,7 @@ int getIndex(char ch) {
 }
 
 void preProcess() {
-    cout << "Preprocessing...";
+    cout << "Preprocessing...Building Trie..." << endl;
 
     root = new TrieNode();
 
@@ -62,7 +62,6 @@ void preProcess() {
     }
     
     word_file.close();
-    cout << "Done." << endl;
 }
 
 bool isSafe(int i, int j) {
@@ -99,7 +98,7 @@ void dfs(int i, int j, string word) {
 
 int main() {
     preProcess();
-
+    cout << "Enter 4 X 4 character grid:" << endl;
     n = 4;
     grid.resize(n, vector<char>(n));
 
@@ -109,6 +108,7 @@ int main() {
         }
     }
 
+    cout << "Generating result..." << endl;
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             string temp = "";
@@ -116,7 +116,7 @@ int main() {
         }
     }
 
-    cout << "foundWords.size() = " << foundWords.size() << endl;
+    cout << "FoundWords size = " << foundWords.size() << endl;
     for(auto i: foundWords) 
         cout << i << endl;
 
