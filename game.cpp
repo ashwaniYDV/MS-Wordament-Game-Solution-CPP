@@ -97,8 +97,14 @@ void dfs(int i, int j, string word) {
     word.pop_back();
 }
 
-int main() {
-    preProcess();
+void reset() {
+    grid.clear();
+    foundWords.clear();
+}
+
+void solve() {
+    reset();
+
     cout << "Enter 4 X 4 character grid:" << endl;
     grid.resize(n, vector<char>(n));
 
@@ -119,6 +125,17 @@ int main() {
     cout << "FoundWords size = " << foundWords.size() << endl;
     for(auto i: foundWords) 
         cout << i << endl;
+}
+
+int main() {
+    preProcess();
+    int game = 1;
+    
+    while (game) {
+        solve();
+        cout << "Enter 0 to exit and 1 to play again!" << endl;
+        cin >> game;
+    }
 
     return 0;
 } 
